@@ -1,0 +1,21 @@
+{% extends "layout.htm" %}
+{% block content %}
+<div>
+    <form method="POST" action="">
+        {{form.hidden_tag()}}
+        <fieldset>
+            <legend>
+                {{legend}}
+            </legend>
+                {{form.title.label}}
+                <br/>
+                {{form.title}}
+                <br/>
+                {{form.content.label}}
+                <br/>
+                {{form.content}}
+        </fieldset>
+                {{form.submit}}
+    </form>
+</div>
+{% endblock %}

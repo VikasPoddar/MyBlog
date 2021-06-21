@@ -1,0 +1,24 @@
+{% extends "layout.htm" %}
+{% block content %}
+    <div>
+        <form method="POST" action="">
+            {{form.hidden_tag()}}
+            <fieldset>
+                <legend>
+                    Login
+                </legend>
+                    {{form.email.label}}
+                    {{form.email}}
+                    {{form.password.label}}
+                    {{form.password}}
+            </fieldset>
+                    {{form.submit}}
+                    <br>
+                    {{form.remember}}
+                    {{form.remember.label}}
+                    <br/>
+                    forget password ? <a href="{{url_for('reset_request')}}">generate new</a>
+
+        </form>
+    </div>
+{%endblock%}

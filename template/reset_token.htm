@@ -1,0 +1,18 @@
+{% extends "layout.htm" %}
+{% block content %}
+    <div class='heading'>
+        <form method="POST" action="">
+            {{form.hidden_tag()}}
+            <fieldset>
+                <legend>
+                    Login
+                </legend>
+                {{form.password.label}}
+                {{form.password}}
+                {{form.confirm_password.label}}
+                {{form.confirm_password}} 
+            </fieldset>
+                    {{form.submit}}
+        </form>
+    </div>
+{%endblock%}

@@ -1,0 +1,19 @@
+{% extends "layout.htm" %}
+{% block content %}
+    {% if current_user.is_authenticated %}
+        <div class='nav'>
+            
+        </div>
+        <div class="post-content">
+            <h6>{{post.author.username}}</h6>
+            <a href="{{url_for('update_post',post_id=post.id)}}"><button class="button1">update</button></a>
+            <a href="{{url_for('delete_post',post_id=post.id)}}"><button class="button1">Delete</button></a>
+            <a href="{{url_for('home')}}"><button class="button1">Home</button></a>
+            <hr/>
+            <article>
+                {{post.content}}
+            </article>
+            
+        </div>
+    {% endif %}
+{% endblock %}

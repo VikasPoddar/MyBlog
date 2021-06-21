@@ -1,0 +1,27 @@
+{% extends "/layout.htm" %}
+{% block content %}
+        <div>
+            <h1>
+                MyBlog
+            </h1>
+        <hr>
+        <img  class="img" src="{{url_for('static',filename='image/index.jpg')}}" height="300px" width="200px">
+        <div class='heading'>
+            <p>
+            Enter to the world of joy and discoveries at <strong>MyBlog</strong>, it is a platform for thinkers and writers.
+            <br>
+            So join us now <br>
+            </p>
+        </div>
+        </div>
+        <hr/>
+        <div class='bottom'>
+            <a href="{{url_for('signup')}}"><button>SignUp</button></a>
+            <a href="{{url_for('login')}}"><button>SignIn</button></a>
+         </div>
+<div class='ending'>
+    <small>
+        it is a demo application , for learning basic of flask devlopment
+    </small>
+</div>
+{% endblock %}

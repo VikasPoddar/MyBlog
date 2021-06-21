@@ -1,0 +1,36 @@
+{% extends "layout.htm" %}
+{% block content %}
+    {% if current_user.is_authenticated %}
+        <div class='nav'>
+            <a href="{{url_for('account')}}"><button class='button1'>Account</button></a> |
+            <a href="{{url_for('logout')}}"><button class='button1'>Logout</button></a>|
+            <a href="{{url_for('new_post')}}"><button class='button1'>Add Post</button></a>|
+            <a href="{{url_for('user_post',username=current_user.username)}}"><button class='button1'>User post</button></a>
+        </div>
+        {% for post in posts.items %}
+        <div >
+            <article class="post-content">
+                <a href="{{url_for('post',post_id=post.id)}}"h2>{{post.title}}</h2></a>
+                <h6>{{post.author.username}}</h6>
+                {{post.content}}
+            </article>
+        </div>
+        {% endfor %}
+        {% for page_num in posts.iter_pages(left_edge=1,right_edge=1,left_current=1,right_current=2) %}
+            {% if page_num %}
+                {% if posts.page==page_num %}
+                    <a href="{{url_for('home',page=page_num)}}"><button class='button1'>{{page_num}}</button></a> 
+                {% else %}
+                    <a href="{{url_for('home',page=page_num)}}"><button class='button'>{{page_num}}</button></a>
+                {% endif %} 
+            {% else %}
+                ...
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+<div class='ending'>
+    <small>
+        it is a demo application , for learning basic of flask devlopment
+    </small>
+</div>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends "layout.htm" %}
+{% block content %}
+    <div>
+        <form method="POST" action="">
+            {{form.hidden_tag()}}
+            <fieldset>
+                <legend>
+                    Sign Up
+                </legend>
+                {{form.username.label}}
+                {{form.username}}
+                {{form.email.label}}
+                {{form.email}}
+                {{form.password.label}}
+                {{form.password}}
+                {{form.confirm_password.label}}
+                {{form.confirm_password}} 
+            </fieldset>
+            {{form.submit}}
+        </form>
+    </div>
+    <div class='bottom'>
+        <small>
+            Do you have account ?
+        </small>
+        <a href="{{url_for('login')}}">login</a>
+    </div>
+{%endblock%}
