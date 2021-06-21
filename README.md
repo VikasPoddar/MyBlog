@@ -1,4 +1,4 @@
 # MyBlog
 A web application for blogging 
-Based on Python-Flask microframe work and html,css
-feel free to use the code base for your project
+Based on Python-Flask micro framework and  frontend devloped in native html & css
+
